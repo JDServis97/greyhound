@@ -26,7 +26,10 @@ import streamlit as st
 from sqlalchemy import create_engine, text
 
 
-st.set_page_config(page_title="Absolut Greyhound", page_icon="⚡", layout="wide")def apply_greyhound_design():
+st.set_page_config(page_title="Absolut Greyhound", page_icon="⚡", layout="wide")
+
+
+def apply_greyhound_design():
     """Restore the original Greyhound control-room aesthetic."""
     st.markdown("""
     <style>
