@@ -26,7 +26,39 @@ import streamlit as st
 from sqlalchemy import create_engine, text
 
 
-st.set_page_config(page_title="Absolut Greyhound", page_icon="⚡", layout="wide")
+st.set_page_config(page_title="Absolut Greyhound", page_icon="⚡", layout="wide")def apply_greyhound_design():
+    """Restore the original Greyhound control-room aesthetic."""
+    st.markdown("""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+    :root { --panel:#141e35; --line:#2b3b60; --gold:#c79c47; --muted:#9dacca; }
+    .stApp { background:radial-gradient(circle at 85% 0,#1d2d51 0,#0b1020 38%,#090d19 100%); color:#edf2ff; font-family:Manrope,sans-serif; }
+    #MainMenu,header,footer,[data-testid="stToolbar"] { visibility:hidden; height:0; }
+    [data-testid="stAppViewContainer"] > .main { background:transparent; }
+    .block-container { max-width:1240px; padding:2.5rem 2.8rem 4rem; }
+    [data-testid="stSidebar"] { background:linear-gradient(180deg,#111a30,#0d1425); border-right:1px solid var(--line); }
+    [data-testid="stSidebar"] * { color:#e9eefb; }
+    h1,h2,h3 { color:#f4f6fc!important; font-family:Manrope,sans-serif!important; }
+    h1 { font-size:29px!important; letter-spacing:-.04em; }
+    [data-testid="stCaptionContainer"] p { color:var(--muted)!important; }
+    [data-testid="stMetric"] { background:rgba(20,30,53,.92); border:1px solid var(--line); border-radius:12px; padding:16px 18px; min-height:104px; }
+    [data-testid="stMetricLabel"] { color:#aebbd6!important; font-size:12px!important; }
+    [data-testid="stMetricValue"] { color:#f4f6fc!important; font-size:29px!important; }
+    [data-testid="stForm"],div[data-testid="stVerticalBlockBorderWrapper"] { background:rgba(20,30,53,.92); border:1px solid var(--line)!important; border-radius:12px; padding:20px; }
+    [data-baseweb="input"] > div,[data-baseweb="select"] > div,textarea { background:#0b1325!important; border-color:#354970!important; color:#fff!important; border-radius:8px!important; }
+    label,[data-testid="stWidgetLabel"] p { color:#cbd5ee!important; font-size:12px!important; font-weight:700!important; }
+    .stButton > button,[data-testid="stFormSubmitButton"] > button { background:linear-gradient(135deg,#b48a34,#d3ad5d)!important; color:#16120b!important; border:0!important; border-radius:8px!important; font-weight:800!important; }
+    .stButton > button[kind="secondary"] { background:#2a3a5b!important; color:#e7efff!important; }
+    [data-testid="stSidebar"] [role="radio"] { border-radius:8px; padding:9px 10px; }
+    [data-testid="stSidebar"] [role="radio"][aria-checked="true"] { background:#29406f; box-shadow:inset 3px 0 0 var(--gold); }
+    @media(max-width:800px) { .block-container { padding:1.5rem 1rem 3rem; } }
+    </style>
+    """, unsafe_allow_html=True)
+
+
+apply_greyhound_design()
+
+
 
 
 def setting(name: str, default: str = "") -> str:
